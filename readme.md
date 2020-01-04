@@ -1,4 +1,4 @@
-#Post from Pinboard to Dreamwidth using Azure Functions.
+# Post from Pinboard to Dreamwidth using Azure Functions.
 
 Contains a copy of Postlinks.ps1 from https://github.com/andrewducker/PowershellLinkPoster
 
