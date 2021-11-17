@@ -12,8 +12,10 @@ param(
 
 $pinboardUrl = "https://feeds.pinboard.in/rss/u:$pinboardUser/"
 Write-Verbose "Fetching from $pinboardUrl"
-[xml]$feed = (Invoke-WebRequest $pinboardUrl -ProxyCredential $proxyCredentials).Content
+$response = (Invoke-WebRequest $pinboardUrl -ProxyCredential $proxyCredentials).Content
 
+#Unmangle the response.  Powershell resorts to the wrong encoding.  *sigh*
+[xml]$feed = [System.Text.Encoding]::UTF8.GetString([System.Text.Encoding]::GetEncoding(28591).GetBytes($response))
 
 Write-Verbose "Feed has $($feed.rdf.item.count) entries"
 
