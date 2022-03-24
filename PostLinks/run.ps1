@@ -7,4 +7,4 @@ if ($Timer.IsPastDue) {
     Write-Host "PowerShell timer is running late!"
 }
 
-& "$PSScriptRoot\PostLinks.ps1" -pinboardUser $env:pinboardUser -emailFrom $env:emailFrom -emailTo $env:emailTo
+& "$PSScriptRoot\PostLinks.ps1" -pinboardUser $env:pinboardUser -emailFrom $env:emailFrom -emailTo $env:emailTo -NumberEntries
